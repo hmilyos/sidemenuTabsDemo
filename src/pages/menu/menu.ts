@@ -35,15 +35,13 @@ export class MenuPage {
     let params = {};
 
     if (page.index) {
-      params = { tabIndex: page.index};
+      params = { tabIndex: page.index, pname: page.title};
     }
-    console.log(page);
     console.log(params);
     if (this.nav.getActiveChildNav() && page.index != undefined) {
-      console.log('--41--');
         this.nav.getActiveChildNav().select(page.index);
     } else {
-      console.log('--44--');
+      //当从底下没有tabs的页面切换到有tabs的页面或者从有tabs切换到无tabs时就要进入此方法，
       this.nav.setRoot(page.pageName, params);
     }
   }

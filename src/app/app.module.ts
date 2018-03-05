@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,10 @@ import { MyApp } from './app.component';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule, //全局需要导入 HTTP
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '返回',   //定义全局的返回文字
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

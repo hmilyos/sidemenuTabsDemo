@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Tabs} from 'ionic-angular';
 
 /**
  * Generated class for the Tab3Page page.
@@ -19,7 +19,12 @@ export class Tab3Page {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Tab3Page');
+    //console.log('ionViewDidLoad Tab3Page');
+  }
+
+  toTabs(index: number){
+    var t: Tabs = this.navCtrl.parent;
+    t.select(index);
   }
 
 }

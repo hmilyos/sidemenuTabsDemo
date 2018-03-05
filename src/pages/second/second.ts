@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the TabsPage page.
+ * Generated class for the SecondPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,22 +10,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-tabs',
-  templateUrl: 'tabs.html',
+  selector: 'page-second',
+  templateUrl: 'second.html',
 })
-export class TabsPage {
-
-  tab1Root = 'Tab1Page';
-  tab2Root = 'Tab2Page';
-  tab3Root = 'Tab3Page';
-  myIndex: number;
-
+export class SecondPage {
+  pname: string = '';
+  pid: string = '';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.myIndex = navParams.data.tabIndex || 0;
   }
 
   ionViewDidLoad() {
-
+    //console.log('ionViewDidLoad SecondPage');
+    this.pname = this.navParams.get('pname');
+    this.pid = this.navParams.get('pid');
   }
 
 }

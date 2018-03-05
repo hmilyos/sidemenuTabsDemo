@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, Tabs} from 'ionic-angular';
 
 /**
  * Generated class for the Tab1Page page.
@@ -19,7 +19,17 @@ export class Tab1Page {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Tab1Page');
+    //console.log('ionViewDidLoad Tab1Page');
   }
+
+  toSecondPage(){
+    this.navCtrl.push('SecondPage', {pid: 2, pname: '二级页面'});
+  }
+
+  toTabs(index: number){
+    var t: Tabs = this.navCtrl.parent;
+    t.select(index);
+  }
+
 
 }
